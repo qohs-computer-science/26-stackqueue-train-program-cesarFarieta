@@ -40,6 +40,11 @@ public class Train {
         return miles;
     }
 
+    public String setMiles() {
+        miles =  100;
+        return miles;
+    }
+
     public String toString(){
         return "Name "+this.name +"\n Product "+this.product +"\n Origin "+this.origin +"\n Destination "+this.destination +"\n Weight "+this.weight +"\n Miles "+this.miles; 
     }
