@@ -32,8 +32,8 @@ public class MyProgram {
 					String product = x.nextLine();
 					String origin = x.nextLine();
 					String dest = x.nextLine();
-					int weight = x.nextLine();
-					int mile = x.nextLine();
+					int weight = x.nextInt();
+					int mile = x.nextInt();
 
 					myQ.add(new Train(name2,product, origin,dest,weight,mile));
 					// read in the rest of the input for a car, create a train, add train to the q
@@ -42,10 +42,11 @@ public class MyProgram {
 				{
 					String name2 = x.nextLine();
 					String dest = x.nextLine();
-					myQ.add(new Train(name2,dest));					
+					myQ.add(new Train(name2,dest));
+
 					// read in the rest of the input for an enginer, create a train, add train to the q
 				}
-				// read the next name // loop variable changing
+				// read the next name // loop variable changing  (Still do that)
 			}
 		}
 		catch(Exception e)
@@ -58,39 +59,57 @@ public class MyProgram {
 		Stack <Train> TrackC= new Stack<>();
 		Stack <Train> TrackD= new Stack<>();
 		Stack <Train> Track1= new Stack<>();
-		int weightA;
-		int weightB;
-		int weightC;
+		int weightA=0;
+		int weightB=0;
+		int weightC=0;
 
 		while (!myQ.isEmpty()){// start while
 			Train car= myQ.remove();
 			if (car.getName().substring(0,3).equals("CAR") && car.getMiles()>700){
 				Track1.push(car);
+				myQ.remove(car)
+				
 			}// end if 
 
 
 
 			else if(car.getDestination().equals("Trenton")){
 				if (car.getName().substring(0,3).equals("CAR")){
+					if(weightA + car.getWeight()<=limitTrackA){
+						TrackA.push(car);
+						myQ.remove(car);
+					}
+					else{
+	
+					}
+				}
+				else {
+					while(TrackA.isEmpty()==False){
+						TrackA.peep().pop();
+					}
 
 				}
-				else 
-
-				
 			}// end else if TRENTON
 
 
 
 
 
-
 			else if(car.getDestination().equals("Charlotte")){
-				TrackB.push(car);
+				if (car.getName().substring(0,3).equals("CAR")){
+
+				}
+				else 
 
 
 			}// end else if Charlotte
 			else if(car.getDestination().equals("Baltimore")){
-				TrackC.push(car);
+				if (car.getName().substring(0,3).equals("CAR")){
+
+				}
+				else 
+
+
 
 
 			}// end else if Baltimore
