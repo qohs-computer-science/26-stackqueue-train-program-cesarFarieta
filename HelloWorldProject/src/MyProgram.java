@@ -46,7 +46,9 @@ public class MyProgram {
 
 					// read in the rest of the input for an enginer, create a train, add train to the q
 				}
-				// read the next name // loop variable changing  (Still do that)
+				name= x.nextLine();
+				name= x.nextLine();
+				// read the next name // loop variable changing 
 			}
 		}
 		catch(Exception e)
@@ -67,7 +69,7 @@ public class MyProgram {
 			Train car= myQ.remove();
 			if (car.getName().substring(0,3).equals("CAR") && car.getMiles()>700){
 				Track1.push(car);
-				myQ.remove(car)
+				myQ.remove(car);
 				
 			}// end if 
 
@@ -78,14 +80,15 @@ public class MyProgram {
 					if(weightA + car.getWeight()<=limitTrackA){
 						TrackA.push(car);
 						myQ.remove(car);
+						weightA =+ car.getWeight();
 					}
 					else{
-	
+						System.out.println("Sent out to Trenton");
 					}
 				}
-				else {
-					while(TrackA.isEmpty()==False){
-						TrackA.peep().pop();
+				else {// start else for engine
+					while(TrackA.isEmpty()==false){
+						System.out.println("Sent out to Trenton");
 					}
 
 				}
