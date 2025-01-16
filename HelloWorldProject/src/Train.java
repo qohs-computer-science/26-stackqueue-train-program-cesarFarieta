@@ -3,7 +3,7 @@ public class Train {
     private int weight, miles;
 
 
-    Public train (string car, string con, string city, string dest, int size, int dist){
+    public Train (String car, String con, String city, String dest, int size, int dist){
             name=car;
             product=con;
             origin=city;
@@ -11,7 +11,7 @@ public class Train {
             weight=size;
             miles=dist;
     } 
-    Public train (string car, string dest){
+    public Train (String car, String dest){
             name=car;
             destination=dest;
     }
@@ -32,15 +32,15 @@ public class Train {
         return destination;
     }
 
-    public String getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public String getMiles() {
+    public int getMiles() {
         return miles;
     }
 
-    public String setMiles() {
+    public int setMiles() {
         miles =  100;
         return miles;
     }
