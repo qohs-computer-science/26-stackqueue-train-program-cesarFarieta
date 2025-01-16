@@ -28,25 +28,23 @@ public class MyProgram {
 			{
 				if (name.substring(0,3).equals("CAR") )
 				{
-					String name2 = x.nextLine();
 					String product = x.nextLine();
 					String origin = x.nextLine();
 					String dest = x.nextLine();
 					int weight = x.nextInt();
 					int mile = x.nextInt();
-
-					myQ.add(new Train(name2,product, origin,dest,weight,mile));
+					x.nextLine();
+					myQ.add(new Train(name,product, origin,dest,weight,mile));
 					// read in the rest of the input for a car, create a train, add train to the q
 				}
 				else
 				{
-					String name2 = x.nextLine();
 					String dest = x.nextLine();
-					myQ.add(new Train(name2,dest));
+					myQ.add(new Train(name,dest));
 
 					// read in the rest of the input for an enginer, create a train, add train to the q
 				}
-				name= x.nextLine();
+				
 				name= x.nextLine();
 				// read the next name // loop variable changing 
 			}
@@ -86,16 +84,16 @@ public class MyProgram {
 					else{
 						while(TrackA.isEmpty()==false){
 							Train temp = TrackA.pop();
-							System.out.println(temp.getName()+"containing "+ temp.getProduct());
+							System.out.println(temp.getName()+" containing "+ temp.getProduct());
 						}
 					}
 				}
 				else {// start else for engine
 					while(TrackA.isEmpty()==false){
 						Train temp = TrackA.pop();
-						System.out.println(temp.getName()+ " leaving for" + temp.getDestination() + "with the following cars: ");
+						System.out.println(temp.getName()+ " leaving for " + temp.getDestination() + " with the following cars: ");
 						while(TrackA.isEmpty()==false){
-							System.out.println(temp.getName()+"containing "+ temp.getProduct());
+							System.out.println(temp.getName()+" containing "+ temp.getProduct());
 						}
 					}
 
@@ -112,16 +110,16 @@ public class MyProgram {
 					else{
 						while(TrackA.isEmpty()==false){
 							Train temp = TrackA.pop();
-							System.out.println(temp.getName()+"containing "+ temp.getProduct());
+							System.out.println(temp.getName()+" containing "+ temp.getProduct());
 						}
 					}
 				}
 				else{
 					while(TrackB.isEmpty()==false){
 						Train temp = TrackB.pop();
-						System.out.println(temp.getName()+ " leaving for" + temp.getDestination() + "with the following cars: ");
+						System.out.println(temp.getName()+ " leaving for " + temp.getDestination() + " with the following cars: ");
 						while(TrackB.isEmpty()==false){
-							System.out.println(temp.getName()+"containing "+ temp.getProduct());
+							System.out.println(temp.getName()+" containing "+ temp.getProduct());
 						}
 					}
 				}
@@ -138,16 +136,16 @@ public class MyProgram {
 					else{
 						while(TrackC.isEmpty()==false){
 							Train temp = TrackC.pop();
-							System.out.println(temp.getName()+"containing "+ temp.getProduct());
+							System.out.println(temp.getName()+" containing "+ temp.getProduct());
 						}
 					}
 				}
 				else {
 					while(TrackC.isEmpty()==false){
 						Train temp = TrackC.pop();
-						System.out.println(temp.getName()+ " leaving for" + temp.getDestination() + "with the following cars: ");
+						System.out.println(temp.getName()+ " leaving for " + temp.getDestination() + " with the following cars: ");
 						while(TrackC.isEmpty()==false){
-							System.out.println(temp.getName()+"containing "+ temp.getProduct());
+							System.out.println(temp.getName()+" containing "+ temp.getProduct());
 						}
 					}
 				}
@@ -160,7 +158,7 @@ public class MyProgram {
 				Train temp = TrackD.pop();
 						System.out.println("these are the cars with other destinations:");
 						while(TrackD.isEmpty()==false){
-							System.out.println(temp.getName()+"containing "+ temp.getProduct());
+							System.out.println(temp.getName()+" containing "+ temp.getProduct());
 						}
 					
 			}
