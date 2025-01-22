@@ -62,9 +62,10 @@ public class MyProgram {
 
 		while (!myQ.isEmpty()){// start while
 			Train car= myQ.remove();
+	
 			if (car.getName().substring(0,3).equals("CAR") && car.getMiles()>700){
 				Track1.push(car);
-
+	
 			}// end if 
 
 
@@ -73,7 +74,7 @@ public class MyProgram {
 				if (car.getName().substring(0,3).equals("CAR")){
 					if(weightA + car.getWeight()<=limitTrackA){
 						TrackA.push(car);
-						car.setMiles();
+						//car.setMiles();
 						weightA += car.getWeight();
 					}
 					else{
@@ -82,14 +83,10 @@ public class MyProgram {
 						System.out.println("ENG00000 leaving for Trenton with following cars");
 						while(TrackA.isEmpty()==false){
 							Train temp = TrackA.pop();
-							System.out.println(temp.getName()+" containing "+ temp.getProduct());
+							System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
 						}
 						TrackA.push(car);
-						car.setMiles();
-						System.out.println(weightA+" "+ car.getWeight());	
-
 						weightA = car.getWeight();
-						System.out.println(weightA+" "+ car.getWeight());
 					}
 				}
 				else {// start else for engine
@@ -99,9 +96,9 @@ public class MyProgram {
 
 					while(TrackA.isEmpty()==false){
 						Train temp = TrackA.pop();
-						System.out.println(temp.getName() + "containing "+ temp.getProduct());
+						System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
 					}
-					System.out.println(weightA);
+					//System.out.println(weightA);
 					weightA=0;
 				}
 			}// end else if TRENTON
@@ -115,7 +112,7 @@ public class MyProgram {
 				if(car.getName().substring(0,3).equals("CAR")){
 					if(weightB + car.getWeight() <= limitTrackB){
 						TrackB.push(car);
-						car.setMiles();
+						//car.setMiles();
 						weightB += car.getWeight();
 					} else {
 						System.out.println();
@@ -123,13 +120,13 @@ public class MyProgram {
 						System.out.println("ENG00000 leaving for Charlotte with following cars: ");
 						while(!TrackB.isEmpty()){
 							Train temp = TrackB.pop();
-							System.out.println(temp.getName() + " containing " + temp.getProduct());
+							System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
 						}
 						TrackB.push(car);
-						car.setMiles();
-						System.out.println(weightB + " " + car.getWeight());
+						//car.setMiles();
+						//System.out.println(weightB + " " + car.getWeight());
 						weightB = car.getWeight();
-						System.out.println(weightB + " " + car.getWeight());
+						//System.out.println(weightB + " " + car.getWeight());
 					}
 				} else {
 					System.out.println();
@@ -139,14 +136,14 @@ public class MyProgram {
 							Train temp = TrackB.pop();
 							System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
 					}
-					System.out.println(weightB);
+					//System.out.println(weightB);
 					weightB = 0;
 				}
 			} else if(car.getDestination().equals("Baltimore")){
 				if(car.getName().substring(0,3).equals("CAR")){
 					if(weightC + car.getWeight() <= limitTrackC){
 						TrackC.push(car);
-						car.setMiles();
+						//car.setMiles();
 						weightC += car.getWeight();
 					} else {
 						System.out.println();
@@ -157,11 +154,11 @@ public class MyProgram {
 							System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
 						}
 						TrackC.push(car);
-						car.setMiles();
-						System.out.println(weightC + " " + car.getWeight());
+						//car.setMiles();
+						//System.out.println(weightC + " " + car.getWeight());
 
 						weightC = car.getWeight();
-						System.out.println(weightC + " " + car.getWeight());
+						//System.out.println(weightC + " " + car.getWeight());
 
 					}
 				} else {
@@ -178,8 +175,106 @@ public class MyProgram {
 				TrackD.push(car);
 			}
 			
+		} //
+
+
+
+		
+
+
+
+		System.out.println("break and start of the second part after sort");
+
+
+
+
+		while (!Track1.isEmpty()){// start while
+			Train car= Track1.pop();
+			car.setMiles();
+	
+			if(car.getDestination().equals("Trenton")){
+				if(weightA + car.getWeight()<=limitTrackA){
+					TrackA.push(car);
+					weightA += car.getWeight();
+					}
+				else{
+					System.out.println();
+					System.out.println("Sent out to Trenton");
+					System.out.println("ENG00000 leaving for Trenton with following cars");
+					while(TrackA.isEmpty()==false){
+						Train temp = TrackA.pop();
+						System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
+					}
+					TrackA.push(car);
+					weightA = car.getWeight();
+				}
+			}
+
+			
+
+			else if(car.getDestination().equals("Charlotte")){
+				if(weightB + car.getWeight()<=limitTrackB){
+					TrackB.push(car);
+					weightB += car.getWeight();
+					}
+				else{
+					System.out.println();
+					System.out.println("Sent out to Charlotte");
+					System.out.println("ENG00000 leaving for Charlotte with following cars");
+					while(TrackB.isEmpty()==false){
+						Train temp = TrackB.pop();
+						System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
+					}
+					TrackB.push(car);
+					weightB = car.getWeight();
+				}
+			}
+
+
+
+			else if(car.getDestination().equals("Baltimore")){
+				if(weightC + car.getWeight()<=limitTrackC){
+					TrackC.push(car);
+					weightC += car.getWeight();
+					}
+				else{
+					System.out.println();
+					System.out.println("Sent out to Baltimore");
+					System.out.println("ENG00000 leaving for Baltimore with following cars");
+					while(TrackC.isEmpty()==false){
+						Train temp = TrackC.pop();
+						System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
+					}
+					TrackC.push(car);
+					weightC = car.getWeight();
+				}
+			}
+
+			else {
+				TrackD.push(car);
+			}
+
 		}
+
+
+
+
+
+
+
+
+		// loop through track __ other, changing miles - 
 		System.out.println();
+
+
+
+
+
+
+
+
+
+
 		System.out.println("Trains leaving for other destinations: ");
 		while(!TrackD.isEmpty()){
 			Train temp = TrackD.pop();
