@@ -182,8 +182,10 @@ public class MyProgram {
 		
 
 
+		System.out.println();
 
 		System.out.println("break and start of the second part after sort");
+		System.out.println();
 
 
 
@@ -259,14 +261,41 @@ public class MyProgram {
 
 
 
+		System.out.println();
+
+		
+		
+		// send all of them becuase end of the day
+		System.out.println("Sent out to Trenton");
+		System.out.println("ENG00000 sent to Trenton with following cars");		
+		while(TrackA.isEmpty()==false){
+			Train temp = TrackA.pop();
+			System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
+		}
+		weightA = 0;
+		System.out.println();
 
 
+		System.out.println("Sent out to Charlotte");
+		System.out.println("ENG00000 sent to Charlotte with following cars");		
+		while(TrackB.isEmpty()==false){
+			Train temp = TrackB.pop();
+			System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
+		}
+		weightB = 0;
 
 
 		// loop through track __ other, changing miles - 
 		System.out.println();
 
-
+		System.out.println("Sent out to Baltimore");
+		System.out.println("ENG00000 sent to Baltimore with following cars");		
+		while(TrackC.isEmpty()==false){
+			Train temp = TrackC.pop();
+			System.out.println(temp.getName() + " containing " + temp.getProduct()+" weighing "+temp.getWeight()+"lbs with "+temp.getMiles()+" miles");
+		}
+		weightC = 0;
+		System.out.println();
 
 
 
